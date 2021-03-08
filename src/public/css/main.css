@@ -1,2 +1,13 @@
 h1 {
-  color: red; }
+  color: rgb(253, 249, 249); }
+
+.main{
+  margin-top: 0;
+}
+h2 {
+  color: blue;
+}
+.footer {
+  position: relative;
+ 
+}
