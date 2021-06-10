@@ -1,0 +1,112 @@
+<div class="main-content">
+    <header>
+        <h4>
+            <label for="nav-toggle">
+                <span class="las la-bars"></span>
+            </label>
+            <div>{{page}}</div>
+        </h4>
+        <div class="search-wrapper">
+            <span class="las la-search"></span>
+            <input type="search" placeholder="Search...">
+        </div>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light pr-4">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto"> 
+                    <li class="nav-item dropdown">
+                        {{#with user}}
+                        <a  style="display:flex; align-items:center;" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <img src="https://baotuoitre.net/wp-content/uploads/2019/05/tieu-su-bach-loc-11.jpg" class="user-avatar" alt="">
+                            <div style="display:flex; flex-direction: column; align-items:center;margin-right:0.2rem;margin-left:0.2rem">
+                              {{username}}
+                              <small>_<span id="role">{{role}}</span></small>
+                            </div>
+                        </a>
+                        {{/with}}
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="/user/accounts">Account</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="user/logout?_method=POST">Log out</a>
+                        </div>
+                    </li> 
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <h4>CREATE ALARM</h4>
+        <nav aria-label="Page navigation example">
+            <ul class="pagination">
+                <li class="page-item"><a class="page-link" href="/user/alarms/manage-alarms">Back</a></li>
+            </ul>
+        </nav>
+        <div class="container">
+            <form method="POST" action="user/alarms/create-alarm" class="mt-4 justify-content-center">
+                <div class="form-group">
+                    <label for="alarmSelection">Tag name</label>
+                    <select id="alarmSelection" class="custom-select" name="alarmname">
+                        <option selected>Select a tag to set alarm</option>
+                        <option value="V1N">Voltage Phase 1 (V1N)</option>
+                        <option value="V2N">Voltage Phase 2 (V2N)</option>
+                        <option value="V3N">Voltage Phase 3 (V3N)</option>
+                        <option value="VLN">Voltage Line-Neutral (VLN)</option>
+                        <option value="I1N">Current Phase 1 (I1N)</option>
+                        <option value="I2N">Current Phase 2 (I2N)</option>
+                        <option value="I3N">Current Phase 3 (I3N)</option>
+                        <option value="I">Current Summary (I)</option>
+                    </select>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-6 mb-3">
+                        <label for="highSelection">HIGH HIGH Level</label>
+                        <select id="highhighSelection" class="custom-select" name="highhigh">
+                            <option selected>Select a tag to set alarm</option>
+                            <option value="330">330V</option>
+                            <option value="320">320V</option>     
+                        </select>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="highSelection">HIGH Level</label>
+                        <select id="highSelection" class="custom-select" name="high">
+                            <option selected>Select a tag to set alarm</option>
+                            <option value="230">230V</option>
+                            <option value="220">220V</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-6 mb-3">
+                        <label for="lowSelection">LOW Level</label>
+                        <select id="lowSelection" class="custom-select" name="low">
+                            <option selected>Select a tag to set alarm</option>
+                            <option value="30">30V</option>
+                            <option value="40">40V</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="validationTooltip02">LOW LOW Level</label>
+                        <select id="alarmSelection" class="custom-select" name="lowlow">
+                            <option selected>Select a tag to set alarm</option>
+                            <option value="10">10V</option>
+                            <option value="20">20V</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-6 mb-3">
+                            <label for="deadbandSelection">Deadband</label>
+                            <input type="text" class="form-control" id="deadbandSelection" placeholder="Deadband" name="deadband">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="inputPassword">Device ID</label>
+                        <input type="text" class="form-control" id="inputDeviceID" placeholder="Choose a device ID" name="deviceID">
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Create Alarm</button>
+            </form>
+        </div>
+    </main>
+</div>

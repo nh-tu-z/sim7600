@@ -19,9 +19,18 @@
   },
   "homepage": "https://github.com/nh-tu-z/sim7600#readme",
   "dependencies": {
+    "cookie-parser": "^1.4.5",
+    "crypto": "^1.0.1",
+    "dotenv": "^8.5.1",
     "express": "^4.17.1",
     "express-handlebars": "^5.2.1",
+    "jsonwebtoken": "^8.5.1",
+    "method-override": "^3.0.0",
     "mongoose": "^5.11.18",
+    "mongoose-delete": "^0.5.3",
+    "mqtt": "^4.2.6",
+    "prompt": "^1.1.0",
+    "short-id": "0.1.0-1",
     "socket.io": "^3.1.1"
   },
   "devDependencies": {
